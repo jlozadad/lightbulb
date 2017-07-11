@@ -12,7 +12,9 @@
       - vim
       - git
       - wget
-      
+      - sshpass
+      - python
+      - python-pip
     state: latest
     enablerepo: epel-testing
   tags:
@@ -20,12 +22,9 @@
     - control
 
 - name: Install Ansible
-  yum:
-    name:
-      - sshpass
-      - ansible
-    state: latest
-    enablerepo: epel-testing
+  - pip:
+    name: ansible
+    
   tags:
     - control_node
     - control
