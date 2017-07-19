@@ -22,13 +22,13 @@
     - control
 
 - name: Install Ansible
-  - pip:
+  pip:
     name: ansible
-    
-  tags:
-    - control_node
-    - control
-  when: control_node_install_ansible
+    state: latest
+  #tags:
+  #  - control_node
+  #  - control
+  #when: control_node_install_ansible
 
 
 - name: Clone lightbulb
