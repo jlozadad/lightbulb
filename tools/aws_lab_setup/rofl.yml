@@ -1,6 +1,0 @@
----
-  - name: test control node
-    hosts: all
-    become: true
-    roles:
-      - control_node
