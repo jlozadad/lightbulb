@@ -48,12 +48,23 @@ mark span.hljs-string{
 ::selection {
   color: #fff;
   background: rgba(0, 0, 0, 0.99);
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 .reveal .slides > section,
 .reveal .slides > section > section {
   line-height: 1.3;
-  font-weight: inherit; }
+  font-weight: inherit;
+}
+  
+  
+.text-center{
+  text-align: center;
+}
+
+.text-small{
+  font-size: 70% !important;
+}
 
 /*********************************************
  * HEADERS
@@ -86,10 +97,14 @@ mark span.hljs-string{
   font-size: 1.35em; }
 
 .reveal h3 {
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  color: #555;
+}
 
 .reveal h4 {
-  font-size: 1em; }
+  font-size: 1em;
+  color: #555;
+}
 
 .reveal h1 {
   text-shadow: none; }
@@ -163,7 +178,8 @@ mark span.hljs-string{
   padding: 5px;
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+  /*box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);*/
+}
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
@@ -172,16 +188,19 @@ mark span.hljs-string{
 .reveal q {
   font-style: italic; }
 
-.reveal pre {
+.reveal pre,
+.reveal pre[class*=language-] {
   display: block;
   position: relative;
-  margin: 20px auto;
+  margin: 10px auto;
   text-align: left;
   font-size: 0.55em;
   font-family: monospace;
-  line-height: 1.2em;
+  line-height: 1em;
   word-wrap: break-word;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+  padding: 0px;
+}
 
 .reveal code {
   font-family: monospace; }
@@ -190,8 +209,9 @@ mark span.hljs-string{
   display: block;
   padding: 5px;
   overflow: auto;
-  max-height: 45vh;
-  word-wrap: normal; }
+  max-height: 55vh;
+  word-wrap: normal;
+}
 
 .reveal table {
   margin: auto;
@@ -318,13 +338,15 @@ mark span.hljs-string{
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-  background: rgba(0, 0, 0, 0.2); }
+  background: rgba(0, 0, 0, 0.2);
+}
 
 .reveal .progress span {
   background: #00008B;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
 
 
 /*********************************************
@@ -364,7 +386,7 @@ div.ans-mark .circle{
   fill:#000;
 }
 
-div.ans-mark .a-mark{
+svg .a-mark{
   fill:#FFFFFF;
 }
 
@@ -430,15 +452,21 @@ div.ans-mark .a-mark{
 
 .columns{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
-.columns > *{
-  flex-basis: 100%;
+.reveal .columns > *{
+  flex-basis: 31%;
+  margin-right: 2.333%;
+  flex-grow: 1;
 }
 
 .reveal .progress span {
   background: #ff5850;
+}
+
+.monospace{
+  font-family: courier, monospace !important;
 }
 
 
@@ -473,11 +501,11 @@ div.ans-mark .a-mark{
 .reveal .controls .navigate-up, .reveal .controls .navigate-up.enabled {
   border-bottom-color: #ccc;
 }
+
 .reveal .controls .navigate-up.enabled:hover {
     border-bottom-color: #999;
     opacity: 0.5;
 }
-
 
 .reveal .controls button {
   opacity: 0.1;
